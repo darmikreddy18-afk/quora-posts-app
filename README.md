@@ -1,7 +1,7 @@
 # 📝 REST Posts App
 
-A simple **CRUD (Create, Read, Update, Delete)** web application built using **Node.js, Express, and EJS**.
-This project simulates a basic social platform where users can create, view, edit, and manage posts.
+A full-featured **CRUD (Create, Read, Update, Delete)** web application built using **Node.js, Express, and EJS**.
+This project simulates a simple social platform where users can create, view, edit, and delete posts.
 
 ---
 
@@ -11,8 +11,9 @@ This project simulates a basic social platform where users can create, view, edi
 * 📄 View all posts
 * 🔍 View a single post
 * ✏️ Edit existing post
-* 🧠 RESTful routing structure
-* 🔁 Method override for PATCH requests
+* 🗑️ Delete a post
+* 🔁 RESTful routing using GET, POST, PATCH, DELETE
+* ⚙️ Method override for PATCH and DELETE requests
 
 ---
 
@@ -29,12 +30,11 @@ This project simulates a basic social platform where users can create, view, edi
 
 ## 📂 Project Structure
 
-```
+```id="hfy54x"
 REST_CLASS/
 │
 ├── views/         # EJS templates (index, create, edit, show)
 ├── public/        # Static files (CSS)
-├── node_modules/  # Dependencies (ignored)
 ├── index.js       # Main server file
 ├── package.json
 ├── .gitignore
@@ -43,7 +43,7 @@ REST_CLASS/
 
 ---
 
-## 🔄 CRUD Operations Explained
+## 🔄 CRUD Operations
 
 ### ➕ Create (POST)
 
@@ -63,13 +63,13 @@ REST_CLASS/
 
 * Route: `/posts/:id`
 * Updates the content of an existing post
-* Uses `method-override` to simulate PATCH requests
 
 ---
 
-### ❌ Delete (Optional Extension)
+### 🗑️ Delete (DELETE)
 
-* Can be implemented using `DELETE /posts/:id`
+* Route: `/posts/:id`
+* Removes a post from the list
 
 ---
 
@@ -77,11 +77,12 @@ REST_CLASS/
 
 Since HTML forms only support GET and POST, this project uses:
 
-```
+```id="cqxjyy"
 ?_method=PATCH
+?_method=DELETE
 ```
 
-This allows Express to treat POST requests as PATCH requests for updating data.
+This allows Express to handle PATCH and DELETE requests properly.
 
 ---
 
@@ -89,31 +90,31 @@ This allows Express to treat POST requests as PATCH requests for updating data.
 
 1. Clone the repository:
 
-```
+```id="b78mbu"
 git clone https://github.com/darmikreddy18-afk/quora-posts-app.git
 ```
 
-2. Navigate into the folder:
+2. Navigate into the project folder:
 
-```
+```id="e6gm1y"
 cd rest-posts-app
 ```
 
 3. Install dependencies:
 
-```
+```id="lvhtcu"
 npm install
 ```
 
 4. Run the server:
 
-```
+```id="a3v4dr"
 node index.js
 ```
 
 5. Open in browser:
 
-```
+```id="mbujgc"
 http://localhost:8080/posts
 ```
 
@@ -122,20 +123,19 @@ http://localhost:8080/posts
 ## 🧠 Key Learnings
 
 * Understanding RESTful routing
-* Difference between POST and PATCH
+* Difference between GET, POST, PATCH, DELETE
 * Handling form data with `req.body`
-* Using `req.params` vs `req.query`
-* Dynamic routing in Express
-* Server-side rendering with EJS
+* Using `req.params` for dynamic routing
+* Method overriding in Express
+* Server-side rendering using EJS
 
 ---
 
-## 📌 Future Improvements
+## 🚀 Future Improvements
 
-* 🗑️ Add delete functionality
-* ❤️ Add like feature
+* ❤️ Add like functionality
 * 🗃️ Connect to a database (MongoDB)
-* 🔐 Add authentication
+* 🔐 Add user authentication
 * 🎨 Improve UI/UX
 
 ---
@@ -149,3 +149,4 @@ http://localhost:8080/posts
 ## ⭐ If you like this project
 
 Give it a ⭐ on GitHub!
+
